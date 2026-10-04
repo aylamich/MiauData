@@ -1,0 +1,8 @@
+# o pyspark precisa do Java 17 ou mais novo instalado (testado com Java 23)
+pandas==2.3.3
+requests==2.34.2
+truststore==0.10.4
+matplotlib==3.11.2
+jupyter==1.1.1
+pyspark==4.2.0
+pyarrow==25.0.1

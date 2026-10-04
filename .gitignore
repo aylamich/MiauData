@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# arquivos temporarios do spark
+spark-warehouse/
+metastore_db/
+derby.log
+
+# arquivo de bloqueio do word
+~$*
