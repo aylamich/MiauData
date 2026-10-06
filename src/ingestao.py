@@ -5,7 +5,7 @@
 # Para cada base sao duas coisas:
 #   - os dados, pelo export CSV do portal (mantem os nomes e formatos originais das colunas)
 #   - os metadados, pela API JSON do portal (periodo coberto, ultima atualizacao, tipos das colunas)
-# No fim, conferimos a contagem baixada com a contagem que a API informa.
+# No fim, confiro a contagem baixada com a contagem que a API informa.
 
 import json
 from datetime import date, datetime
@@ -62,7 +62,7 @@ def baixar_metadados(nome, dataset_id):
 
 
 def linhas_no_portal(dataset_id):
-    # a API aceita consultas no estilo SQL (SoQL); aqui so pedimos a contagem
+    # a API aceita consultas no estilo SQL (SoQL); aqui so peco a contagem de linhas
     resp = requests.get(URL_API.format(id=dataset_id), params={"$select": "count(*)"}, timeout=60)
     return int(resp.json()[0]["count"])
 
@@ -71,6 +71,7 @@ if __name__ == "__main__":
     PASTA_RAW.mkdir(parents=True, exist_ok=True)
 
     resumo = []
+    # pra cada base: baixa o CSV, baixa os metadados e pergunta pra API quantas linhas existem
     for nome, id_ in BASES.items():
         baixadas = baixar_csv(nome, id_)
         atualizado = baixar_metadados(nome, id_)
