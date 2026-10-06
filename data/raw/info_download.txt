@@ -1,3 +1,3 @@
-data do download: 2026-10-04
-intakes (wter-evkm): 173812 linhas
-outcomes (9t4d-g238): 173775 linhas
+data do download: 2026-10-06
+intakes (wter-evkm): 173812 linhas | portal: 173812 | dados atualizados no portal em 2025-05-19
+outcomes (9t4d-g238): 173775 linhas | portal: 173775 | dados atualizados no portal em 2025-05-19

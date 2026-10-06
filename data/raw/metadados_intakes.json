@@ -1,0 +1,1268 @@
+{
+  "id": "wter-evkm",
+  "name": "Austin Animal Center Intakes (10/01/2013 to 05/05/2025)",
+  "assetType": "dataset",
+  "attribution": "City of Austin, Texas - data.austintexas.gov",
+  "attributionLink": "http://www.austintexas.gov/department/animal-services",
+  "averageRating": 0,
+  "category": "Health and Community Services",
+  "createdAt": 1445285794,
+  "description": "Animal Center Intakes from Oct, 1st 2013 to May, 5th 2025.\n\nIntakes represent the status of animals as they arrive at the Animal Center. All animals receive a unique Animal ID during intake. Annually over 90% of animals entering the center, are adopted, transferred to rescue or returned to their owners.",
+  "diciBackend": false,
+  "displayType": "table",
+  "domainCName": "data.austintexas.gov",
+  "downloadCount": 1449854,
+  "hideFromCatalog": false,
+  "hideFromDataJson": false,
+  "licenseId": "PUBLIC_DOMAIN",
+  "locked": false,
+  "newBackend": true,
+  "numberOfComments": 0,
+  "oid": 41267412,
+  "provenance": "official",
+  "publicationAppendEnabled": true,
+  "publicationDate": 1744667494,
+  "publicationGroup": 4957320,
+  "publicationStage": "published",
+  "rowsUpdatedAt": 1747667505,
+  "tableId": 19856060,
+  "totalTimesRated": 0,
+  "viewCount": 78290,
+  "viewLastModified": 1771868376,
+  "viewType": "tabular",
+  "approvals": [
+    {
+      "reviewedAt": 1541079667,
+      "reviewedAutomatically": true,
+      "state": "approved",
+      "submissionId": 6845840,
+      "submissionObject": "public_audience_request",
+      "submissionOutcome": "change_audience",
+      "submittedAt": 1541079667,
+      "targetAudience": "public",
+      "workflowId": 3284,
+      "submissionDetails": {
+        "permissionType": "READ"
+      },
+      "submissionOutcomeApplication": {
+        "failureCount": 0,
+        "status": "success"
+      },
+      "submitter": {
+        "id": "nc6h-vjxb",
+        "displayName": "Duron Davis"
+      }
+    },
+    {
+      "message": "The `strict_permissions` flag must be on to enable internal approvals.",
+      "state": "unsubmittable",
+      "targetAudience": "internal",
+      "workflowId": 4707
+    }
+  ],
+  "clientContext": {
+    "clientContextVariables": [],
+    "inheritedVariables": {}
+  },
+  "columns": [
+    {
+      "id": 608812520,
+      "name": "Animal ID",
+      "dataTypeName": "text",
+      "fieldName": "animal_id",
+      "position": 1,
+      "renderTypeName": "text",
+      "tableColumnId": 32110827,
+      "width": 208,
+      "cachedContents": {
+        "non_null": "173812",
+        "largest": "A929725",
+        "null": "0",
+        "top": [
+          {
+            "item": "A721033",
+            "count": "33"
+          },
+          {
+            "item": "A718223",
+            "count": "14"
+          },
+          {
+            "item": "A705625",
+            "count": "12"
+          },
+          {
+            "item": "A718877",
+            "count": "12"
+          },
+          {
+            "item": "A706536",
+            "count": "11"
+          },
+          {
+            "item": "A761266",
+            "count": "10"
+          },
+          {
+            "item": "A616444",
+            "count": "9"
+          },
+          {
+            "item": "A716018",
+            "count": "9"
+          },
+          {
+            "item": "A717053",
+            "count": "9"
+          },
+          {
+            "item": "A700407",
+            "count": "9"
+          },
+          {
+            "item": "A737814",
+            "count": "9"
+          },
+          {
+            "item": "A759467",
+            "count": "8"
+          },
+          {
+            "item": "A694501",
+            "count": "8"
+          },
+          {
+            "item": "A733594",
+            "count": "8"
+          },
+          {
+            "item": "A820013",
+            "count": "8"
+          },
+          {
+            "item": "A737833",
+            "count": "8"
+          },
+          {
+            "item": "A615920",
+            "count": "8"
+          },
+          {
+            "item": "A693283",
+            "count": "8"
+          },
+          {
+            "item": "A738451",
+            "count": "8"
+          },
+          {
+            "item": "A738073",
+            "count": "8"
+          }
+        ],
+        "smallest": "A006100",
+        "count": "173812",
+        "cardinality": "156287"
+      },
+      "format": {}
+    },
+    {
+      "id": 608812521,
+      "name": "Name",
+      "dataTypeName": "text",
+      "fieldName": "name",
+      "position": 2,
+      "renderTypeName": "text",
+      "tableColumnId": 32110828,
+      "width": 148,
+      "cachedContents": {
+        "non_null": "123821",
+        "largest": "*Zz",
+        "null": "49991",
+        "top": [
+          {
+            "item": "Luna",
+            "count": "761"
+          },
+          {
+            "item": "Max",
+            "count": "725"
+          },
+          {
+            "item": "Bella",
+            "count": "676"
+          },
+          {
+            "item": "Rocky",
+            "count": "490"
+          },
+          {
+            "item": "Daisy",
+            "count": "466"
+          },
+          {
+            "item": "Coco",
+            "count": "432"
+          },
+          {
+            "item": "Charlie",
+            "count": "411"
+          },
+          {
+            "item": "Princess",
+            "count": "407"
+          },
+          {
+            "item": "Blue",
+            "count": "394"
+          },
+          {
+            "item": "Buddy",
+            "count": "389"
+          },
+          {
+            "item": "Lucy",
+            "count": "379"
+          },
+          {
+            "item": "Lola",
+            "count": "357"
+          },
+          {
+            "item": "Zeus",
+            "count": "321"
+          },
+          {
+            "item": "Oreo",
+            "count": "298"
+          },
+          {
+            "item": "Milo",
+            "count": "278"
+          },
+          {
+            "item": "Shadow",
+            "count": "268"
+          },
+          {
+            "item": "Cookie",
+            "count": "268"
+          },
+          {
+            "item": "Bear",
+            "count": "264"
+          },
+          {
+            "item": "Lucky",
+            "count": "256"
+          },
+          {
+            "item": "Jack",
+            "count": "241"
+          }
+        ],
+        "smallest": "*",
+        "count": "173812",
+        "cardinality": "29774"
+      },
+      "format": {}
+    },
+    {
+      "id": 608812533,
+      "name": "DateTime",
+      "dataTypeName": "calendar_date",
+      "description": "",
+      "fieldName": "datetime",
+      "position": 3,
+      "renderTypeName": "calendar_date",
+      "tableColumnId": 157957250,
+      "width": 196,
+      "cachedContents": {
+        "non_null": "173812",
+        "largest": "2025-05-04T23:44:00.000",
+        "null": "0",
+        "top": [
+          {
+            "item": "2016-09-23T12:00:00.000",
+            "count": "64"
+          },
+          {
+            "item": "2014-07-09T12:58:00.000",
+            "count": "63"
+          },
+          {
+            "item": "2017-09-01T14:47:00.000",
+            "count": "59"
+          },
+          {
+            "item": "2014-02-19T13:51:00.000",
+            "count": "49"
+          },
+          {
+            "item": "2016-02-14T16:02:00.000",
+            "count": "45"
+          },
+          {
+            "item": "2023-01-22T11:19:00.000",
+            "count": "43"
+          },
+          {
+            "item": "2022-11-10T11:39:00.000",
+            "count": "43"
+          },
+          {
+            "item": "2022-07-22T15:50:00.000",
+            "count": "40"
+          },
+          {
+            "item": "2023-11-02T13:27:00.000",
+            "count": "39"
+          },
+          {
+            "item": "2014-08-15T18:48:00.000",
+            "count": "38"
+          },
+          {
+            "item": "2021-04-21T14:56:00.000",
+            "count": "37"
+          },
+          {
+            "item": "2023-05-15T12:13:00.000",
+            "count": "35"
+          },
+          {
+            "item": "2017-05-06T15:11:00.000",
+            "count": "32"
+          },
+          {
+            "item": "2018-09-04T13:02:00.000",
+            "count": "32"
+          },
+          {
+            "item": "2024-02-16T12:41:00.000",
+            "count": "31"
+          },
+          {
+            "item": "2019-07-09T17:18:00.000",
+            "count": "23"
+          },
+          {
+            "item": "2013-12-04T23:12:00.000",
+            "count": "23"
+          },
+          {
+            "item": "2021-08-11T16:35:00.000",
+            "count": "23"
+          },
+          {
+            "item": "2021-06-15T12:37:00.000",
+            "count": "23"
+          },
+          {
+            "item": "2016-09-03T12:04:00.000",
+            "count": "22"
+          }
+        ],
+        "smallest": "2013-10-01T07:51:00.000",
+        "count": "173812",
+        "cardinality": "119722"
+      },
+      "format": {
+        "view": "date_time",
+        "align": "left"
+      }
+    },
+    {
+      "id": 608812532,
+      "name": "MonthYear",
+      "dataTypeName": "calendar_date",
+      "description": "",
+      "fieldName": "datetime2",
+      "position": 4,
+      "renderTypeName": "calendar_date",
+      "tableColumnId": 157957249,
+      "width": 100,
+      "cachedContents": {
+        "non_null": "173812",
+        "largest": "2025-05-04T23:44:00.000",
+        "null": "0",
+        "top": [
+          {
+            "item": "2016-09-23T12:00:00.000",
+            "count": "64"
+          },
+          {
+            "item": "2014-07-09T12:58:00.000",
+            "count": "63"
+          },
+          {
+            "item": "2017-09-01T14:47:00.000",
+            "count": "59"
+          },
+          {
+            "item": "2014-02-19T13:51:00.000",
+            "count": "49"
+          },
+          {
+            "item": "2016-02-14T16:02:00.000",
+            "count": "45"
+          },
+          {
+            "item": "2023-01-22T11:19:00.000",
+            "count": "43"
+          },
+          {
+            "item": "2022-11-10T11:39:00.000",
+            "count": "43"
+          },
+          {
+            "item": "2022-07-22T15:50:00.000",
+            "count": "40"
+          },
+          {
+            "item": "2023-11-02T13:27:00.000",
+            "count": "39"
+          },
+          {
+            "item": "2014-08-15T18:48:00.000",
+            "count": "38"
+          },
+          {
+            "item": "2021-04-21T14:56:00.000",
+            "count": "37"
+          },
+          {
+            "item": "2023-05-15T12:13:00.000",
+            "count": "35"
+          },
+          {
+            "item": "2017-05-06T15:11:00.000",
+            "count": "32"
+          },
+          {
+            "item": "2018-09-04T13:02:00.000",
+            "count": "32"
+          },
+          {
+            "item": "2024-02-16T12:41:00.000",
+            "count": "31"
+          },
+          {
+            "item": "2019-07-09T17:18:00.000",
+            "count": "23"
+          },
+          {
+            "item": "2013-12-04T23:12:00.000",
+            "count": "23"
+          },
+          {
+            "item": "2021-08-11T16:35:00.000",
+            "count": "23"
+          },
+          {
+            "item": "2021-06-15T12:37:00.000",
+            "count": "23"
+          },
+          {
+            "item": "2016-09-03T12:04:00.000",
+            "count": "22"
+          }
+        ],
+        "smallest": "2013-10-01T07:51:00.000",
+        "count": "173812",
+        "cardinality": "119722"
+      },
+      "format": {
+        "view": "date_monthy",
+        "align": "left"
+      }
+    },
+    {
+      "id": 608812524,
+      "name": "Found Location",
+      "dataTypeName": "text",
+      "fieldName": "found_location",
+      "position": 5,
+      "renderTypeName": "text",
+      "tableColumnId": 32110830,
+      "width": 268,
+      "cachedContents": {
+        "non_null": "173812",
+        "largest": "Zyle Road in Travis (TX)",
+        "null": "0",
+        "top": [
+          {
+            "item": "Austin (TX)",
+            "count": "31541"
+          },
+          {
+            "item": "Travis (TX)",
+            "count": "3796"
+          },
+          {
+            "item": "Outside Jurisdiction",
+            "count": "2083"
+          },
+          {
+            "item": "7201 Levander Loop in Austin (TX)",
+            "count": "1588"
+          },
+          {
+            "item": "Manor (TX)",
+            "count": "757"
+          },
+          {
+            "item": "Pflugerville (TX)",
+            "count": "686"
+          },
+          {
+            "item": "Del Valle (TX)",
+            "count": "527"
+          },
+          {
+            "item": "4434 Frontier Trail in Austin (TX)",
+            "count": "426"
+          },
+          {
+            "item": "124 W Anderson Ln in Austin (TX)",
+            "count": "297"
+          },
+          {
+            "item": "4434 Frontier Trl in Austin (TX)",
+            "count": "238"
+          },
+          {
+            "item": "124 West Anderson Lane in Austin (TX)",
+            "count": "232"
+          },
+          {
+            "item": "1156 W Cesar Chavez in Austin (TX)",
+            "count": "211"
+          },
+          {
+            "item": "Leander (TX)",
+            "count": "172"
+          },
+          {
+            "item": "12034 Research Blvd in Austin (TX)",
+            "count": "136"
+          },
+          {
+            "item": "12034 Research in Austin (TX)",
+            "count": "113"
+          },
+          {
+            "item": "Lago Vista (TX)",
+            "count": "107"
+          },
+          {
+            "item": "1156 W Cesar Chavez St in Austin (TX)",
+            "count": "99"
+          },
+          {
+            "item": "Cedar Park (TX)",
+            "count": "97"
+          },
+          {
+            "item": "1156 West Cesar Chavez in Austin (TX)",
+            "count": "91"
+          },
+          {
+            "item": "1834 Ferguson in Austin (TX)",
+            "count": "90"
+          }
+        ],
+        "smallest": "00000 Briarcliff in Travis (TX)",
+        "count": "173812",
+        "cardinality": "70183"
+      },
+      "format": {}
+    },
+    {
+      "id": 608812525,
+      "name": "Intake Type",
+      "dataTypeName": "text",
+      "fieldName": "intake_type",
+      "position": 6,
+      "renderTypeName": "text",
+      "tableColumnId": 32110831,
+      "width": 232,
+      "cachedContents": {
+        "non_null": "173812",
+        "largest": "Wildlife",
+        "null": "0",
+        "top": [
+          {
+            "item": "Stray",
+            "count": "119160"
+          },
+          {
+            "item": "Owner Surrender",
+            "count": "35563"
+          },
+          {
+            "item": "Public Assist",
+            "count": "10432"
+          },
+          {
+            "item": "Wildlife",
+            "count": "6483"
+          },
+          {
+            "item": "Abandoned",
+            "count": "1910"
+          },
+          {
+            "item": "Euthanasia Request",
+            "count": "264"
+          }
+        ],
+        "smallest": "Abandoned",
+        "count": "173812",
+        "cardinality": "6"
+      },
+      "format": {}
+    },
+    {
+      "id": 608812526,
+      "name": "Intake Condition",
+      "dataTypeName": "text",
+      "fieldName": "intake_condition",
+      "position": 7,
+      "renderTypeName": "text",
+      "tableColumnId": 32110832,
+      "width": 292,
+      "cachedContents": {
+        "non_null": "173812",
+        "largest": "Unknown",
+        "null": "0",
+        "top": [
+          {
+            "item": "Normal",
+            "count": "147141"
+          },
+          {
+            "item": "Injured",
+            "count": "10805"
+          },
+          {
+            "item": "Sick",
+            "count": "7939"
+          },
+          {
+            "item": "Nursing",
+            "count": "3878"
+          },
+          {
+            "item": "Neonatal",
+            "count": "1971"
+          },
+          {
+            "item": "Medical",
+            "count": "614"
+          },
+          {
+            "item": "Aged",
+            "count": "525"
+          },
+          {
+            "item": "Other",
+            "count": "353"
+          },
+          {
+            "item": "Pregnant",
+            "count": "170"
+          },
+          {
+            "item": "Feral",
+            "count": "145"
+          },
+          {
+            "item": "Med Attn",
+            "count": "87"
+          },
+          {
+            "item": "Behavior",
+            "count": "81"
+          },
+          {
+            "item": "Unknown",
+            "count": "48"
+          },
+          {
+            "item": "Med Urgent",
+            "count": "21"
+          },
+          {
+            "item": "Neurologic",
+            "count": "13"
+          },
+          {
+            "item": "Parvo",
+            "count": "11"
+          },
+          {
+            "item": "Space",
+            "count": "4"
+          },
+          {
+            "item": "Agonal",
+            "count": "4"
+          },
+          {
+            "item": "Panleuk",
+            "count": "1"
+          },
+          {
+            "item": "Congenital",
+            "count": "1"
+          }
+        ],
+        "smallest": "Aged",
+        "count": "173812",
+        "cardinality": "20"
+      },
+      "format": {}
+    },
+    {
+      "id": 608812527,
+      "name": "Animal Type",
+      "dataTypeName": "text",
+      "fieldName": "animal_type",
+      "position": 8,
+      "renderTypeName": "text",
+      "tableColumnId": 32110833,
+      "width": 232,
+      "cachedContents": {
+        "non_null": "173812",
+        "largest": "Other",
+        "null": "0",
+        "top": [
+          {
+            "item": "Dog",
+            "count": "94608"
+          },
+          {
+            "item": "Cat",
+            "count": "69324"
+          },
+          {
+            "item": "Other",
+            "count": "8968"
+          },
+          {
+            "item": "Bird",
+            "count": "878"
+          },
+          {
+            "item": "Livestock",
+            "count": "34"
+          }
+        ],
+        "smallest": "Bird",
+        "count": "173812",
+        "cardinality": "5"
+      },
+      "format": {}
+    },
+    {
+      "id": 608812528,
+      "name": "Sex upon Intake",
+      "dataTypeName": "text",
+      "fieldName": "sex_upon_intake",
+      "position": 9,
+      "renderTypeName": "text",
+      "tableColumnId": 32110834,
+      "width": 280,
+      "cachedContents": {
+        "non_null": "173812",
+        "largest": "Unknown",
+        "null": "0",
+        "top": [
+          {
+            "item": "Intact Male",
+            "count": "58996"
+          },
+          {
+            "item": "Intact Female",
+            "count": "56714"
+          },
+          {
+            "item": "Neutered Male",
+            "count": "24236"
+          },
+          {
+            "item": "Spayed Female",
+            "count": "20324"
+          },
+          {
+            "item": "Unknown",
+            "count": "13541"
+          },
+          {
+            "item": "NULL",
+            "count": "1"
+          }
+        ],
+        "smallest": "Intact Female",
+        "count": "173812",
+        "cardinality": "6"
+      },
+      "format": {}
+    },
+    {
+      "id": 608812529,
+      "name": "Age upon Intake",
+      "dataTypeName": "text",
+      "fieldName": "age_upon_intake",
+      "position": 10,
+      "renderTypeName": "text",
+      "tableColumnId": 32110835,
+      "width": 280,
+      "cachedContents": {
+        "non_null": "173812",
+        "largest": "9 years",
+        "null": "0",
+        "top": [
+          {
+            "item": "1 year",
+            "count": "28294"
+          },
+          {
+            "item": "2 years",
+            "count": "28033"
+          },
+          {
+            "item": "1 month",
+            "count": "18203"
+          },
+          {
+            "item": "2 months",
+            "count": "10432"
+          },
+          {
+            "item": "3 years",
+            "count": "9610"
+          },
+          {
+            "item": "4 weeks",
+            "count": "6324"
+          },
+          {
+            "item": "4 years",
+            "count": "5842"
+          },
+          {
+            "item": "5 years",
+            "count": "5187"
+          },
+          {
+            "item": "3 weeks",
+            "count": "5124"
+          },
+          {
+            "item": "3 months",
+            "count": "4924"
+          },
+          {
+            "item": "4 months",
+            "count": "4787"
+          },
+          {
+            "item": "5 months",
+            "count": "4377"
+          },
+          {
+            "item": "2 weeks",
+            "count": "3655"
+          },
+          {
+            "item": "6 years",
+            "count": "3426"
+          },
+          {
+            "item": "6 months",
+            "count": "3329"
+          },
+          {
+            "item": "7 years",
+            "count": "3010"
+          },
+          {
+            "item": "8 years",
+            "count": "2834"
+          },
+          {
+            "item": "7 months",
+            "count": "2591"
+          },
+          {
+            "item": "9 months",
+            "count": "2496"
+          },
+          {
+            "item": "10 years",
+            "count": "2292"
+          }
+        ],
+        "smallest": "0 years",
+        "count": "173812",
+        "cardinality": "55"
+      },
+      "format": {}
+    },
+    {
+      "id": 608812530,
+      "name": "Breed",
+      "dataTypeName": "text",
+      "fieldName": "breed",
+      "position": 11,
+      "renderTypeName": "text",
+      "tableColumnId": 32110836,
+      "width": 160,
+      "cachedContents": {
+        "non_null": "173812",
+        "largest": "Yorkshire Terrier/Yorkshire Terrier",
+        "null": "0",
+        "top": [
+          {
+            "item": "Domestic Shorthair Mix",
+            "count": "33665"
+          },
+          {
+            "item": "Domestic Shorthair",
+            "count": "24187"
+          },
+          {
+            "item": "Pit Bull Mix",
+            "count": "10092"
+          },
+          {
+            "item": "Labrador Retriever Mix",
+            "count": "8808"
+          },
+          {
+            "item": "Chihuahua Shorthair Mix",
+            "count": "6889"
+          },
+          {
+            "item": "German Shepherd Mix",
+            "count": "4054"
+          },
+          {
+            "item": "Pit Bull",
+            "count": "3490"
+          },
+          {
+            "item": "Domestic Medium Hair Mix",
+            "count": "3334"
+          },
+          {
+            "item": "Bat",
+            "count": "2356"
+          },
+          {
+            "item": "Domestic Medium Hair",
+            "count": "2117"
+          },
+          {
+            "item": "Labrador Retriever",
+            "count": "2044"
+          },
+          {
+            "item": "Chihuahua Shorthair",
+            "count": "2014"
+          },
+          {
+            "item": "Australian Cattle Dog Mix",
+            "count": "1982"
+          },
+          {
+            "item": "German Shepherd",
+            "count": "1845"
+          },
+          {
+            "item": "Bat Mix",
+            "count": "1756"
+          },
+          {
+            "item": "Domestic Longhair Mix",
+            "count": "1678"
+          },
+          {
+            "item": "Siamese Mix",
+            "count": "1471"
+          },
+          {
+            "item": "Boxer Mix",
+            "count": "1197"
+          },
+          {
+            "item": "Dachshund Mix",
+            "count": "1186"
+          },
+          {
+            "item": "Border Collie Mix",
+            "count": "1149"
+          }
+        ],
+        "smallest": "Abyssinian",
+        "count": "173812",
+        "cardinality": "3006"
+      },
+      "format": {}
+    },
+    {
+      "id": 608812531,
+      "name": "Color",
+      "dataTypeName": "text",
+      "fieldName": "color",
+      "position": 12,
+      "renderTypeName": "text",
+      "tableColumnId": 32110837,
+      "width": 160,
+      "cachedContents": {
+        "non_null": "173812",
+        "largest": "Yellow/Yellow",
+        "null": "0",
+        "top": [
+          {
+            "item": "Black/White",
+            "count": "17976"
+          },
+          {
+            "item": "Black",
+            "count": "14651"
+          },
+          {
+            "item": "Brown Tabby",
+            "count": "10725"
+          },
+          {
+            "item": "Brown",
+            "count": "7172"
+          },
+          {
+            "item": "White",
+            "count": "6139"
+          },
+          {
+            "item": "Brown/White",
+            "count": "5568"
+          },
+          {
+            "item": "Brown Tabby/White",
+            "count": "5453"
+          },
+          {
+            "item": "Orange Tabby",
+            "count": "5146"
+          },
+          {
+            "item": "Tan/White",
+            "count": "4972"
+          },
+          {
+            "item": "White/Black",
+            "count": "4842"
+          },
+          {
+            "item": "Blue/White",
+            "count": "4780"
+          },
+          {
+            "item": "Tan",
+            "count": "4184"
+          },
+          {
+            "item": "Black/Brown",
+            "count": "3707"
+          },
+          {
+            "item": "Tricolor",
+            "count": "3660"
+          },
+          {
+            "item": "Black/Tan",
+            "count": "3637"
+          },
+          {
+            "item": "Brown/Black",
+            "count": "3405"
+          },
+          {
+            "item": "White/Brown",
+            "count": "3292"
+          },
+          {
+            "item": "Blue",
+            "count": "3200"
+          },
+          {
+            "item": "Tortie",
+            "count": "3177"
+          },
+          {
+            "item": "Calico",
+            "count": "3023"
+          }
+        ],
+        "smallest": "Agouti",
+        "count": "173812",
+        "cardinality": "661"
+      },
+      "format": {}
+    }
+  ],
+  "grants": [
+    {
+      "inherited": false,
+      "type": "viewer",
+      "flags": [
+        "public"
+      ]
+    }
+  ],
+  "license": {
+    "name": "Public Domain"
+  },
+  "metadata": {
+    "custom_fields": {
+      "Ownership": {
+        "Department name": "Austin Animal Services"
+      },
+      "Publishing Information": {
+        "Update Frequency": "Historical (Not Updated)",
+        "Time range of data": "10/01/2013 to 05/05/2025"
+      }
+    },
+    "rowLabel": "Row",
+    "availableDisplayTypes": [
+      "table",
+      "fatrow",
+      "page"
+    ]
+  },
+  "owner": {
+    "id": "m7fd-xpcx",
+    "createdAt": 1714656161,
+    "displayName": "Austin Animal Services Owners",
+    "screenName": "Austin Animal Services Owners",
+    "type": "team",
+    "members": [
+      {
+        "id": "2cfp-i7em",
+        "createdAt": 1557775417,
+        "disabledAt": 1670008024,
+        "displayName": "jason.garza",
+        "screenName": "jason.garza",
+        "teamId": 1600912,
+        "teamRole": "owner",
+        "type": "interactive",
+        "flags": [
+          "siteMember"
+        ]
+      },
+      {
+        "id": "99uc-9byy",
+        "createdAt": 1335376852,
+        "displayName": "Open Data Admin Team",
+        "profileImageUrlLarge": "/api/users/99uc-9byy/profile_images/LARGE",
+        "profileImageUrlMedium": "/api/users/99uc-9byy/profile_images/THUMB",
+        "profileImageUrlSmall": "/api/users/99uc-9byy/profile_images/TINY",
+        "screenName": "Open Data Admin Team",
+        "teamId": 1600912,
+        "teamRole": "owner",
+        "type": "interactive",
+        "flags": [
+          "siteMember"
+        ]
+      },
+      {
+        "id": "x6ye-k2nx",
+        "createdAt": 1713216985,
+        "displayName": "Tim.Tersigni@austintexas.gov",
+        "screenName": "Tim.Tersigni@austintexas.gov",
+        "teamId": 1600912,
+        "teamRole": "owner",
+        "type": "interactive",
+        "flags": [
+          "siteMember"
+        ]
+      }
+    ]
+  },
+  "query": {},
+  "rights": [
+    "read"
+  ],
+  "tableAuthor": {
+    "id": "m7fd-xpcx",
+    "createdAt": 1714656161,
+    "displayName": "Austin Animal Services Owners",
+    "screenName": "Austin Animal Services Owners",
+    "type": "team",
+    "members": [
+      {
+        "id": "2cfp-i7em",
+        "createdAt": 1557775417,
+        "disabledAt": 1670008024,
+        "displayName": "jason.garza",
+        "screenName": "jason.garza",
+        "teamId": 1600912,
+        "teamRole": "owner",
+        "type": "interactive",
+        "flags": [
+          "siteMember"
+        ]
+      },
+      {
+        "id": "99uc-9byy",
+        "createdAt": 1335376852,
+        "displayName": "Open Data Admin Team",
+        "profileImageUrlLarge": "/api/users/99uc-9byy/profile_images/LARGE",
+        "profileImageUrlMedium": "/api/users/99uc-9byy/profile_images/THUMB",
+        "profileImageUrlSmall": "/api/users/99uc-9byy/profile_images/TINY",
+        "screenName": "Open Data Admin Team",
+        "teamId": 1600912,
+        "teamRole": "owner",
+        "type": "interactive",
+        "flags": [
+          "siteMember"
+        ]
+      },
+      {
+        "id": "x6ye-k2nx",
+        "createdAt": 1713216985,
+        "displayName": "Tim.Tersigni@austintexas.gov",
+        "screenName": "Tim.Tersigni@austintexas.gov",
+        "teamId": 1600912,
+        "teamRole": "owner",
+        "type": "interactive",
+        "flags": [
+          "siteMember"
+        ]
+      }
+    ]
+  },
+  "tags": [
+    "intakes",
+    "animal",
+    "cat",
+    "dog",
+    "pet",
+    "no kill",
+    "stray",
+    "surrendered",
+    "lost",
+    "found"
+  ],
+  "flags": [
+    "default",
+    "federated",
+    "internalToPublicFederatedView",
+    "ownerMayBeContacted",
+    "restorable",
+    "restorePossibleForType"
+  ]
+}
