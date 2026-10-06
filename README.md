@@ -1,6 +1,6 @@
 # adoção de gatinhos　ฅ^•ﻌ•^ฅ
 
-> PjBL · RA1 · Data Analytics · PUCPR
+> PjBL · Data Analytics · PUCPR
 > ingestão e preparação dos dados de um abrigo de gatos
 
 Existe a crença de que gatos pretos, adultos e sem nome demoram mais pra serem adotados. Este projeto prepara dados reais do **Austin Animal Center** (Texas, EUA) pra investigar **quais características de um gato estão associadas a ele ser adotado mais rápido ou mais devagar**.
@@ -96,4 +96,3 @@ Os problemas encontrados, cada decisão de limpeza e o dicionário de dados comp
 
 ---
 
-<sub>Feito por Ayla Micheluzzi · PjBL de Data Analytics · PUCPR · 2026　ฅ(^•ﻌ•^ฅ)</sub>
