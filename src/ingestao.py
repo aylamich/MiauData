@@ -67,7 +67,7 @@ def linhas_no_portal(dataset_id):
     return int(resp.json()[0]["count"])
 
 
-if __name__ == "__main__":
+def baixar_tudo():
     PASTA_RAW.mkdir(parents=True, exist_ok=True)
 
     resumo = []
@@ -89,3 +89,7 @@ if __name__ == "__main__":
         f.write("\n".join(resumo) + "\n")
 
     print("Pronto!")
+
+
+if __name__ == "__main__":
+    baixar_tudo()

@@ -9,3 +9,6 @@ derby.log
 
 # arquivo de bloqueio do word
 ~$*
+
+# lotes e checkpoint da simulação de streaming do RA2 (gerados pelo notebook)
+data/streaming/
