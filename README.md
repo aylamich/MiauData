@@ -116,7 +116,7 @@ adocao-gatinhos/
 
 `gatos_ra1.csv` tem **69.309 passagens** de **66.239 gatos**, uma linha por passagem pelo abrigo, com 19 colunas limpas: datas, dias no abrigo, idade em meses, faixa etária, sexo, castração, raça, cor principal, `is_black`, se tem nome, tipo e condição de entrada e desfecho.
 
-Os problemas encontrados, cada decisão de limpeza e o dicionário de dados completo estão em [`docs/documentacao_ra1.docx`](docs/documentacao_ra1.docx).
+Os problemas encontrados, cada decisão de limpeza e o dicionário de dados completo estão em [`docs/documentacao_ra1.pdf`](docs/documentacao_ra1.pdf).
 
 ---
 
