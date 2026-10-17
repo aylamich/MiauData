@@ -1,34 +1,42 @@
 # adoção de gatinhos　ฅ^•ﻌ•^ฅ
 
-> PjBL · Data Analytics · PUCPR
+> PjBL · Data Analytics · PUCPR · Ayla Micheluzzi e Gabriel Baczinski
 > 
-> ingestão e preparação dos dados de um abrigo de gatos
+> ingestão, preparação e streaming dos dados de um abrigo de gatos
 
-Existe a crença de que gatos pretos, adultos e sem nome demoram mais pra serem adotados. Este projeto prepara dados reais do **Austin Animal Center** (Texas, EUA) pra investigar **quais características de um gato estão associadas a ele ser adotado mais rápido ou mais devagar**.
+Abrigos recebem milhares de gatos por ano: uns são adotados em dias, outros esperam meses. Cada dia a mais ocupa uma vaga que outro gato precisaria, aumenta o custo do abrigo e o risco de o gato adoecer lá dentro. Existe a crença de que gatos pretos, adultos e sem nome são os que mais esperam. Se isso for verdade, os dados embasam campanhas de conscientização contra o preconceito na adoção e ajudam o abrigo a dar mais visibilidade a esses gatos.
 
-No RA1 eu só deixo os dados limpos e confiáveis. As respostas ficam pro RA2 e RA3　(=^･ω･^=)
+Este projeto prepara dados reais do **Austin Animal Center** (Texas, EUA) pra investigar **quais características de um gato, quando ele chega ao abrigo, estão associadas à chance de ele ser adotado e ao tempo que ele espera até a adoção**. As características são idade, cor, sexo, castração, ter nome, condição e tipo de entrada, e o mês em que ele chega.
+
+A raça ficou de fora: 95% dos gatos são SRD (`Domestic Shorthair`, `Medium Hair` ou `Longhair`), então quase não tem variação pra comparar. A coluna `raca` continua no dataset só como descrição.
+
+No RA1 deixamos os dados limpos e confiáveis e no RA2 simulamos a chegada de novas adoções com Spark Structured Streaming. As respostas das perguntas ficam pras próximas etapas　(=^･ω･^=)
 
 ---
 
-## perguntas que quero responder
+## perguntas que queremos responder
 
-Cada linha do dataset é uma **passagem** de um gato pelo abrigo (uma entrada + a saída correspondente), de out/2013 a mai/2025. Antes das perguntas, três definições que valem pra todas:
+Cada linha do dataset é uma **passagem** de um gato pelo abrigo (uma entrada + a saída correspondente), de out/2013 a mai/2025. Antes das perguntas, as regras que valem pra todas:
 
 - **tempo até a adoção** = `dias_no_abrigo` das passagens com `desfecho = "adocao"`. As adoções com subtipo `Foster` (cerca de 30%) ficam à parte, porque o tempo delas inclui dias em lar temporário, fora do abrigo.
 - **chance de adoção** = % das passagens com saída que terminam em `adocao`. O `rto-adopt` não conta como adoção: num relatório da prefeitura ele aparece somado com a devolução ao dono.
+- **tempo e chance andam juntos.** O tempo só conta quem foi adotado: se um grupo for mais transferido, os gatos que iam demorar saem da conta e o grupo parece adotado mais rápido. Por isso toda comparação de tempo vem junto com a chance de adoção do mesmo grupo.
+- **comparação dentro da faixa etária.** Filhote é adotado mais rápido e também chega mais sem nome, sem castração e na primavera e no verão. Sem separar por idade, a diferença que aparece pode ser só a idade. Por isso as perguntas 1 e 3 a 7 comparam dentro de cada `faixa_etaria`.
 - como o tempo no abrigo é muito assimétrico (a maioria sai em dias, poucos ficam meses), a comparação principal vai ser pela **mediana**, não pela média.
 
 | # | pergunta | o que vai ser comparado | colunas |
 |---|---|---|---|
-| 1 | Gatos pretos esperam mais pela adoção do que gatos de outras cores? | tempo até a adoção com `is_black` verdadeiro × falso (e os frajolas pela `cor_principal`) | `is_black`, `cor_principal` |
-| 2 | Quanto mais velho o gato chega, mais ele espera? | tempo até a adoção por faixa etária (filhote, adulto, idoso) | `idade_entrada_meses`, `faixa_etaria` |
-| 3 | Gatos que chegam sem nome esperam mais? | tempo até a adoção com e sem nome | `tem_nome`, `nome_com_asterisco` |
-| 4 | Chegar já castrado aumenta a chance de adoção ou encurta a espera? | chance e tempo até a adoção, castrado × não castrado (só sexo conhecido) | `castrado`, `sexo` |
+| 1 | Gatos pretos esperam mais e são adotados menos do que gatos de outras cores? | chance e tempo até a adoção com `is_black` verdadeiro × falso (e os frajolas pela `cor_principal`) | `is_black`, `cor_principal` |
+| 2 | Quanto mais velho o gato chega, mais ele espera? | chance e tempo até a adoção por faixa etária (filhote, adulto, idoso) | `idade_entrada_meses`, `faixa_etaria` |
+| 3 | Gatos que chegam sem nome esperam mais? | chance e tempo até a adoção com e sem nome | `tem_nome`, `nome_com_asterisco` |
+| 4 | Chegar já castrado aumenta a chance de adoção ou encurta a espera? E isso muda entre machos e fêmeas? | chance e tempo até a adoção, castrado × não castrado, separando machos e fêmeas | `castrado`, `sexo` |
 | 5 | Gatos que chegam feridos ou doentes são adotados menos ou esperam mais? | chance e tempo até a adoção por condição de entrada | `condicao_entrada` |
 | 6 | Gatos perdidos e gatos entregues pelo dono têm destinos diferentes? | distribuição dos desfechos por tipo de entrada | `tipo_entrada`, `desfecho` |
-| 7 | O mês em que o gato entra muda o tempo até a adoção (ex.: a "temporada de filhotes")? | tempo até a adoção por mês de entrada | `data_entrada`, `faixa_etaria` |
+| 7 | O mês em que o gato entra muda o tempo até a adoção (ex.: a "temporada de filhotes")? | tempo até a adoção por mês de entrada | `data_entrada` |
 
-Todas usam também `dias_no_abrigo` e `desfecho`.
+Todas usam também `dias_no_abrigo`, `desfecho` e `faixa_etaria`.
+
+**Até onde dá pra concluir:** os dados são de um abrigo só, de uma cidade dos EUA e de política no-kill (quase não sacrifica animais), então os resultados valem pra esse abrigo e não pra todos. E os dados mostram associação, não causa: se gato preto esperar mais, isso não prova que é por ser preto.
 
 ## de onde vêm os dados　/ᐠ｡ꞈ｡ᐟ\
 
@@ -56,22 +64,37 @@ As duas bases estão **congeladas**: cobrem de 01/10/2013 a 05/05/2025, e os met
 
 ## o caminho dos dados
 
+Tudo fica num notebook só, `notebooks/projeto_adocao_gatinhos.ipynb`, no formato do template da disciplina (seções 1 a 7 do RA1 e 8 a 12 do RA2):
+
 ```
-fontes  →  ingestão  →  compreensão  →  qualidade  →  limpeza  →  dados preparados
-           ingestao.py   └──── notebook 01 ────┘     notebook 02    gatos_ra1.csv
+fontes  →  ingestão  →  exploração e qualidade  →  limpeza  →  transformação  →  dados preparados  →  streaming
+           seção 2       seção 3 (pandas)          seção 4     seção 5           seção 6             seções 8 a 12
+           ingestao.py                             └──── PySpark + Spark SQL ────┘ gatos_ra1.csv    (RA2)
 ```
 
 ## como rodar　(=｀ω´=)
 
-Precisa de **Python 3.11+** e **Java 17+** (pro Spark). Confira o Java antes com `java -version`: é o erro mais comum quando o notebook 02 não roda.
+Precisa de **Python 3.11+** e **Java 17+** (pro Spark). Confira o Java antes com `java -version`: é o erro mais comum quando o Spark não sobe.
+
+**No Windows**, o streaming do RA2 grava um checkpoint em disco, e pra isso o Spark precisa de dois arquivos do Hadoop: `winutils.exe` e `hadoop.dll`. Baixe os dois da pasta `hadoop-3.3.6/bin` do repositório [cdarlint/winutils](https://github.com/cdarlint/winutils) e coloque em `C:\hadoop\bin`. O notebook aponta pra essa pasta sozinho. Sem eles, o RA1 roda, mas o RA2 dá erro `HADOOP_HOME and hadoop.home.dir are unset`. No Linux e no Mac não precisa de nada.
 
 ```bash
 pip install -r requirements.txt
-python src/ingestao.py
-jupyter nbconvert --to notebook --execute --inplace notebooks/01_compreensao_e_qualidade.ipynb notebooks/02_limpeza_e_preparacao.ipynb
+jupyter nbconvert --to notebook --execute --inplace notebooks/projeto_adocao_gatinhos.ipynb
 ```
 
-A última linha roda os dois notebooks em ordem, sem precisar abrir o Jupyter (leva uns 3 minutos, quase tudo no 02). Se preferir, dá pra abrir e rodar célula por célula. O resultado aparece em `data/processed/gatos_ra1.csv`.
+A segunda linha roda o notebook inteiro sem abrir o Jupyter (leva uns 5 minutos). Se os dados brutos ainda não existirem, o próprio notebook chama o `src/ingestao.py` pra baixar; pra baixar de novo, rode `python src/ingestao.py`. O resultado do RA1 aparece em `data/processed/gatos_ra1.csv`.
+
+Pra entregar, o notebook vira PDF: `jupyter nbconvert --to html notebooks/projeto_adocao_gatinhos.ipynb` e depois imprimir o HTML em PDF pelo navegador.
+
+## RA2: adoções chegando em streaming　ᓚᘏᗢ
+
+A base é estática, então simulamos a chegada de novas adoções (cenário A da disciplina). Os registros são artificiais, mas coerentes com o abrigo: as características (faixa etária, se é preto, dias de espera) são sorteadas, com semente fixa, entre as adoções reais do último ano, e a quantidade por dia segue a média real (~8 adoções de gatos por dia).
+
+- **chegada:** 32 adoções de 06 a 08/05/2025 (logo depois que a base parou), divididas em 4 lotes que são gravados um de cada vez numa pasta, em JSON. Um lote traz uma adoção atrasada de um dia anterior.
+- **processamento:** Spark Structured Streaming lendo a pasta (`readStream`, um arquivo por micro-lote).
+- **janela:** tumbling de 1 dia sobre o momento da adoção, com a quantidade de adoções, quantos eram gatos pretos e a mediana de dias de espera.
+- **conferência:** no fim, o resultado do streaming é comparado com a mesma conta feita em lote: tem que dar igual.
 
 ## onde está cada coisa
 
@@ -79,11 +102,11 @@ A última linha roda os dois notebooks em ordem, sem precisar abrir o Jupyter (l
 adocao-gatinhos/
 ├── data/
 │   ├── raw/            dados brutos (CSV) e metadados (JSON) baixados; não editar à mão
-│   └── processed/      gatos_ra1.csv, o dataset final do RA1
-├── docs/               documentação completa (ABNT)
+│   ├── processed/      gatos_ra1.csv, o dataset final do RA1
+│   └── streaming/      lotes simulados e checkpoint do RA2 (recriados a cada execução, fora do git)
+├── docs/               documentação completa (template da disciplina)
 ├── notebooks/
-│   ├── 01_compreensao_e_qualidade.ipynb   o que é o dado e que problemas ele tem (pandas)
-│   └── 02_limpeza_e_preparacao.ipynb      tratamentos e dataset final (PySpark + Spark SQL)
+│   └── projeto_adocao_gatinhos.ipynb      RA1 (ingestão, qualidade, limpeza, dataset final) e RA2 (streaming)
 ├── src/
 │   └── ingestao.py     baixa as duas bases e confere com a API
 └── requirements.txt
