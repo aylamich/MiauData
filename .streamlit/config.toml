@@ -1,0 +1,7 @@
+# tema do dashboard (o resto do visual fica em dashboard/kawaii.py)
+[theme]
+base = "light"
+primaryColor = "#D9799B"
+backgroundColor = "#ECE9EB"
+secondaryBackgroundColor = "#F1EEF0"
+textColor = "#3E3A3C"
