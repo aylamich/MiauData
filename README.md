@@ -2,7 +2,7 @@
 
 > PjBL · Data Analytics · PUCPR · Ayla Micheluzzi e Gabriel Baczinski
 > 
-> ingestão, preparação e streaming dos dados de um abrigo de gatos
+> ingestão, preparação, streaming, análise e Machine Learning dos dados de um abrigo de gatos
 
 Abrigos recebem milhares de gatos por ano: uns são adotados em dias, outros esperam meses. Cada dia a mais ocupa uma vaga que outro gato precisaria, aumenta o custo do abrigo e o risco de o gato adoecer lá dentro. Existe a crença de que gatos pretos, adultos e sem nome são os que mais esperam. Se isso for verdade, os dados embasam campanhas de conscientização contra o preconceito na adoção e ajudam o abrigo a dar mais visibilidade a esses gatos.
 
@@ -10,7 +10,7 @@ Este projeto prepara dados reais do **Austin Animal Center** (Texas, EUA) pra in
 
 A raça ficou de fora: 95% dos gatos são SRD (`Domestic Shorthair`, `Medium Hair` ou `Longhair`), então quase não tem variação pra comparar. A coluna `raca` continua no dataset só como descrição.
 
-No RA1 deixamos os dados limpos e confiáveis e no RA2 simulamos a chegada de novas adoções com Spark Structured Streaming. As respostas das perguntas ficam pras próximas etapas　(=^･ω･^=)
+No RA1 deixamos os dados limpos e confiáveis, no RA2 simulamos a chegada de novas adoções com Spark Structured Streaming e no RA3 respondemos às perguntas com estatística, gráficos, um modelo de Machine Learning e um dashboard　(=^･ω･^=)
 
 ---
 
@@ -87,6 +87,15 @@ A segunda linha roda o notebook inteiro sem abrir o Jupyter (leva uns 5 minutos)
 
 Pra entregar, o notebook vira PDF: `jupyter nbconvert --to html notebooks/projeto_adocao_gatinhos.ipynb` e depois imprimir o HTML em PDF pelo navegador.
 
+**RA3** (depois do RA1, porque usa o `gatos_ra1.csv`; não precisa de Spark nem de Java):
+
+```bash
+jupyter nbconvert --to notebook --execute --inplace notebooks/ra3_analise.ipynb
+streamlit run dashboard/app.py
+```
+
+A primeira linha roda a análise e o ML (menos de 1 minuto). A segunda abre o dashboard no navegador (`http://localhost:8501`). A aba "Monitor diário (RA2)" do dashboard só mostra dados depois que o notebook do RA2 gerou os lotes em `data/streaming/`.
+
 ## RA2: adoções chegando em streaming　ᓚᘏᗢ
 
 A base é estática, então simulamos a chegada de novas adoções (cenário A da disciplina). Os registros são artificiais, mas coerentes com o abrigo: as características (faixa etária, se é preto, dias de espera) são sorteadas, com semente fixa, entre as adoções reais do último ano, e a quantidade por dia segue a média real (~8 adoções de gatos por dia).
@@ -96,6 +105,17 @@ A base é estática, então simulamos a chegada de novas adoções (cenário A d
 - **janela:** tumbling de 1 dia sobre o momento da adoção, com a quantidade de adoções, quantos eram gatos pretos e a mediana de dias de espera.
 - **conferência:** no fim, o resultado do streaming é comparado com a mesma conta feita em lote: tem que dar igual.
 
+## RA3: respostas, modelo e dashboard　ᓚᘏᗢ
+
+Em `notebooks/ra3_analise.ipynb`:
+
+- **estatística descritiva:** metade dos gatos adotados sai em até **13 dias** (a média é 25, puxada por poucos que esperam meses, por isso a mediana); 51% das passagens terminam em adoção;
+- **respostas (dentro de cada faixa etária):** idade, saúde, tipo de entrada e castração pesam mais; o gato todo preto é adotado um pouco menos e espera mais em todas as faixas (a crença se confirma, mas o efeito é moderado); na **temporada de filhotes** (abril a julho) a espera dos filhotes vai de 5 para 27 dias;
+- **representatividade:** base inteira (sem amostragem) de um único abrigo no-kill, com práticas que mudaram ao longo dos anos;
+- **ML:** classificação "vai ser adotado?" só com o que se sabe na chegada, treino 2013-2022 e teste 2023-2024. A random forest chega a **AUC 0,80** (acurácia 71%), contra um baseline que só chuta a classe mais comum. O nome do gato fica de fora porque funciona quase como vazamento (o abrigo dá nome a quem vai pra adoção).
+
+O dashboard (`dashboard/app.py`, Streamlit) mostra os indicadores com filtros de ano, faixa etária e tipo de entrada, os gráficos de cada pergunta, um **simulador** que calcula a chance de adoção de um gato com o mesmo modelo do notebook (`src/modelo.py`) e um monitor diário com os lotes simulados do RA2.
+
 ## onde está cada coisa
 
 ```
@@ -104,11 +124,15 @@ adocao-gatinhos/
 │   ├── raw/            dados brutos (CSV) e metadados (JSON) baixados; não editar à mão
 │   ├── processed/      gatos_ra1.csv, o dataset final do RA1
 │   └── streaming/      lotes simulados e checkpoint do RA2 (recriados a cada execução, fora do git)
+├── dashboard/
+│   └── app.py          dashboard em Streamlit (RA3)
 ├── docs/               documentação completa (template da disciplina)
 ├── notebooks/
-│   └── projeto_adocao_gatinhos.ipynb      RA1 (ingestão, qualidade, limpeza, dataset final) e RA2 (streaming)
+│   ├── projeto_adocao_gatinhos.ipynb      RA1 (ingestão, qualidade, limpeza, dataset final) e RA2 (streaming)
+│   └── ra3_analise.ipynb                  RA3 (estatística, gráficos, representatividade, ML, conclusões)
 ├── src/
-│   └── ingestao.py     baixa as duas bases e confere com a API
+│   ├── ingestao.py     baixa as duas bases e confere com a API
+│   └── modelo.py       features e modelo de ML, usados pelo notebook do RA3 e pelo dashboard
 └── requirements.txt
 ```
 
