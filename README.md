@@ -116,6 +116,8 @@ Em `notebooks/ra3_analise.ipynb`:
 
 O dashboard (`dashboard/app.py`, Streamlit) mostra os indicadores com filtros de ano, faixa etária e tipo de entrada, os gráficos de cada pergunta, um **simulador** que calcula a chance de adoção de um gato com o mesmo modelo do notebook (`src/modelo.py`) e um monitor diário com os lotes simulados do RA2.
 
+As técnicas, os resultados e as interpretações do RA3 estão em [`docs/documentacao_ra3.md`](docs/documentacao_ra3.md).
+
 ## onde está cada coisa
 
 ```
@@ -126,7 +128,7 @@ adocao-gatinhos/
 │   └── streaming/      lotes simulados e checkpoint do RA2 (recriados a cada execução, fora do git)
 ├── dashboard/
 │   └── app.py          dashboard em Streamlit (RA3)
-├── docs/               documentação completa (template da disciplina)
+├── docs/               documentação do RA1 (template da disciplina) e do RA3 (documentacao_ra3.md)
 ├── notebooks/
 │   ├── projeto_adocao_gatinhos.ipynb      RA1 (ingestão, qualidade, limpeza, dataset final) e RA2 (streaming)
 │   └── ra3_analise.ipynb                  RA3 (estatística, gráficos, representatividade, ML, conclusões)
